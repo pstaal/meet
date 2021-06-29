@@ -43,19 +43,19 @@ The project was built using create-react-app boiler plate code. Use npm run star
 
 ###### FEATURE 2: SHOW/HIDE AN EVENT'S DETAILS
 
-_Scenario 1: An event element is collapsed by default_
+###### Scenario 1: An event element is collapsed by default\_
 
 1. **Given** the main page is open
-2. **When**user looks at all the events
+2. **When** user looks at all the events
 3. **Then** the events should be collapsed by default
 
-   _Scenario 2: User can expand an event to see its details_
+###### Scenario 2: User can expand an event to see its details\_
 
 4. **Given** the user is on a particular collapsed event
 5. **When** user clicks on a link to expand the event
 6. **Then** the event will expand to show all the details
 
-   _Scenario 3: User can collapse an event to hide its details_
+###### Scenario 3: User can collapse an event to hide its details\_
 
 7. **Given** the user is on a particular expanded event
 8. **When** user clicks on a link to collapse the event
@@ -63,13 +63,13 @@ _Scenario 1: An event element is collapsed by default_
 
 ###### FEATURE 3: SPECIFY NUMBER OF EVENTS
 
-_Scenario 1: When user hasn’t specified a number, 32 is the default number_
+###### Scenario 1: When user hasn’t specified a number, 32 is the default number\_
 
 1. **Given** the user is on the events page
 2. **When** the user has not selected a number of events to show
 3. **Then** the page will show 32 events by default
 
-   _Scenario 2: User can change the number of events they want to see_
+###### Scenario 2: User can change the number of events they want to see\_
 
 4. **Given** the user is on the events page
 5. **When** the user selects the number of events to display
@@ -77,13 +77,13 @@ _Scenario 1: When user hasn’t specified a number, 32 is the default number_
 
 ###### FEATURE 4: USE THE APP WHEN OFFLINE
 
-_Scenario 1: Show cached data when there’s no internet connection_
+###### Scenario 1: Show cached data when there’s no internet connection\_
 
 1. **Given** there is no internet connection
 2. **When** the user visits the meet app
 3. **Then** the page will show the cached data of the app
 
-_Scenario 2: Show error when user changes the settings (city, time range)_
+###### Scenario 2: Show error when user changes the settings (city, time range)\_
 
 4. **Given** there is no internet connection
 5. **When** the user changes the settings (city, time range)
@@ -91,7 +91,7 @@ _Scenario 2: Show error when user changes the settings (city, time range)_
 
 ###### FEATURE 5: DATA VISUALIZATION
 
-_Scenario 1: Show a chart with the number of upcoming events in each city_
+###### Scenario 1: Show a chart with the number of upcoming events in each city\_
 
 1. **Given** the page is open
 2. **When** the user visits that page
