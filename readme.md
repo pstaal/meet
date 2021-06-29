@@ -48,11 +48,15 @@ _Scenario 1: An event element is collapsed by default_
 1. **Given** the main page is open
 2. **When**user looks at all the events
 3. **Then** the events should be collapsed by default
+
    _Scenario 2: User can expand an event to see its details_
+
 4. **Given** the user is on a particular collapsed event
 5. **When** user clicks on a link to expand the event
 6. **Then** the event will expand to show all the details
+
    _Scenario 3: User can collapse an event to hide its details_
+
 7. **Given** the user is on a particular expanded event
 8. **When** user clicks on a link to collapse the event
 9. **Then** the event will collapse to hide all the details
@@ -64,7 +68,9 @@ _Scenario 1: When user hasn’t specified a number, 32 is the default number_
 1. **Given** the user is on the events page
 2. **When** the user has not selected a number of events to show
 3. **Then** the page will show 32 events by default
+
    _Scenario 2: User can change the number of events they want to see_
+
 4. **Given** the user is on the events page
 5. **When** the user selects the number of events to display
 6. **Then** the page will show the number of events that the user selected
@@ -76,7 +82,9 @@ _Scenario 1: Show cached data when there’s no internet connection_
 1. **Given** there is no internet connection
 2. **When** the user visits the meet app
 3. **Then** the page will show the cached data of the app
-   _Scenario 2: Show error when user changes the settings (city, time range)_
+
+_Scenario 2: Show error when user changes the settings (city, time range)_
+
 4. **Given** there is no internet connection
 5. **When** the user changes the settings (city, time range)
 6. **Then** the page will display an error
