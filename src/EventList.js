@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import Event from './Event';
 
 class EventList extends Component {
-  const { events } = this.props;
 
   render() {
+    const { events } = this.props;
+    
     return (
       <ul className="EventList">
         {events.map(event =>
