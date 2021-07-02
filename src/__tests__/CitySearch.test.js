@@ -29,4 +29,15 @@ describe('<CitySearch /> component', () => {
     expect(CitySearchWrapper.state('query')).toBe('Berlin');
   });
 
+  test('render list of suggestions correctly', () => {
+    const locations = extractLocations(mockData);
+    const CitySearchWrapper = shallow(<CitySearch />);
+    CitySearchWrapper.setState({ suggestions: locations });
+    const suggestions = CitySearchWrapper.state('suggestions');
+    expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(suggestions.length + 1);
+    for (let i = 0; i < suggestions.length; i += 1) {
+      expect(CitySearchWrapper.find('.suggestions li').at(i).text()).toBe(suggestions[i]);
+    }
+  });
+
 });
