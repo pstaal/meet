@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class CitySearch extends Component {
+  state = {
+    query: '',
+  }
+
   render() {
     return (
       <div className="CitySearch">
