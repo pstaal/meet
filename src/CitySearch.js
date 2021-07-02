@@ -5,6 +5,11 @@ class CitySearch extends Component {
     query: '',
   }
 
+  handleInputChanged = (event) => {
+    const value = event.target.value;
+    this.setState({ query: value });
+  }
+
   render() {
     return (
       <div className="CitySearch">
@@ -12,6 +17,7 @@ class CitySearch extends Component {
         type="text"
         className="city"
         value={this.state.query}
+        onChange={this.handleInputChanged}
       />
       <ul className="suggestions">
       </ul>
