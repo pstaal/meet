@@ -8,6 +8,8 @@ class CitySearch extends Component {
         type="text"
         className="city"
       />
+      <ul className="suggestions">
+      </ul>
       </div>
     );
   }
