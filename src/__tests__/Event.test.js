@@ -38,25 +38,25 @@ describe('<Event /> component', () => {
   });
 
   test('h2 element should be present after clicking button', () => {
-    EventWrapper.find('button').at(0).simulate('click');
+    EventWrapper.find('button').simulate('click');
     expect(EventWrapper.find('h2').exists()).toBeTruthy();
   });
 
   test('h2 element should disappear after clicking button twice', () => {
-    EventWrapper.find('button').at(0).simulate('click');
-    EventWrapper.find('button').at(0).simulate('click');
+    EventWrapper.find('button').simulate('click');
+    EventWrapper.find('button').simulate('click');
     expect(EventWrapper.find('h2').exists()).toBeFalsy();
   });
 
   test('render proper text in h2 after clicking button', () => {
-      EventWrapper.find('button').at(0).simulate('click');
-      expect(EventWrapper.find('h2').at(0).text()).toBe('About Event:');
+      EventWrapper.find('button').simulate('click');
+      expect(EventWrapper.find('h2').text()).toBe('About Event:');
   });
 
   test("clicking the button should change expand state", () => {
     EventWrapper.setState({
       expand: true });
-    EventWrapper.find('button').at(0).simulate('click');
+    EventWrapper.find('button').simulate('click');
     expect(EventWrapper.state("expand")).toBe(false);
   });
 
