@@ -51,4 +51,13 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('button')).toHaveLength(mockEventData.length);
   });
 
+  test('h2 element should not be present by default', () => {
+    expect(EventWrapper.find('h2').exists()).toBeFalsy();
+  });
+
+  test('h2 element should be present after clicking button', () => {
+    EventWrapper.find('button').at(0).simulate('click');
+    expect(EventWrapper.find('h2').exists()).toBeTruthy();
+  });
+
 });
