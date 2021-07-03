@@ -13,6 +13,7 @@ class Event extends Component {
         <div className="event_description">
           {event.start.dateTime} ({event.start.timeZone}) <br />@{event.summary} | {event.location}
         </div>
+        <button>Show details</button>
       </div>)}   
       </>
     )

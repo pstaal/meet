@@ -47,4 +47,8 @@ describe('<Event /> component', () => {
     }
   });
 
+  test('check if there is are buttons', () => {
+    expect(EventWrapper.find('button')).toHaveLength(mockEventData.length);
+  });
+
 });
