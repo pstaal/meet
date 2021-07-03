@@ -43,7 +43,8 @@ describe('<Event /> component', () => {
   });
 
   test('h2 element should disappear after clicking button twice', () => {
-    EventWrapper.find('button').simulate('click');
+    EventWrapper.setState({
+      expand: true });
     EventWrapper.find('button').simulate('click');
     expect(EventWrapper.find('h2').exists()).toBeFalsy();
   });
