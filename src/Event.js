@@ -16,8 +16,10 @@ class Event extends Component {
 
   render() {
     const { events } = this.props;
+    const { expand } = this.state;
+
     let renderedDiv;
-    if (!this.state.expand) {
+    if (!expand) {
      renderedDiv = events.map(event => <div key={event.id} className="event_title">
      <h1>{event.summary}</h1>
      <div className="event_description">
@@ -27,13 +29,13 @@ class Event extends Component {
    </div>)
     }
 
-    else if (this.state.expand) {
+    else if (expand) {
       renderedDiv = events.map(event => <div key={event.id} className="event_title">
      <h1>{event.summary}</h1>
      <div className="event_description">
        {event.start.dateTime} ({event.start.timeZone}) <br />@{event.summary} | {event.location}
      </div>
-     <h2></h2>
+     <h2>About Event:</h2>
      <button onClick={this.onClickHandler}>Hide details</button>
    </div>)
 
