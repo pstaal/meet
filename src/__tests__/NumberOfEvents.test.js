@@ -8,11 +8,15 @@ describe('<NumberOfEvents /> component', () => {
 
   let NumberOfEventsWrapper;
   beforeAll(() => {
-    NumberOfEventsWrapper = shallow(<NumberOfEvents event={mockData}/>);
+    NumberOfEventsWrapper = shallow(<NumberOfEvents events={mockData}/>);
   });
 
   test('check if there is an input field', () => {
     expect(NumberOfEventsWrapper.find('input')).toHaveLength(1);
+  });
+
+  test('check if the value of the input field is the length of the events', () => {
+    expect(NumberOfEventsWrapper.find('input').props().value).toBe(mockData.length);
   });
 
 }); 
