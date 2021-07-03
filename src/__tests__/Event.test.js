@@ -6,49 +6,31 @@ import Event from '../Event';
 describe('<Event /> component', () => {
   let EventWrapper;
   beforeAll(() => {
-    EventWrapper = shallow(<Event events={mockEventData}/>);
-  });
-
-  test('render the right amount of titles', () => {
-    expect(EventWrapper.find('.event_title')).toHaveLength(mockEventData.length);
-  });
-
-  test('render the right amount of descriptions', () => {
-    expect(EventWrapper.find('.event_description')).toHaveLength(mockEventData.length);
+    EventWrapper = shallow(<Event event={mockEventData}/>);
   });
   
-  test('render titles with the right content', () => {
-    for (let i = 0; i < mockEventData.length; i += 1) {
-      expect(EventWrapper.find('h1').at(i).text()).toBe(mockEventData[i].summary);
-    }
+  test('render title with the right content', () => {
+      expect(EventWrapper.find('h1').text()).toBe(mockEventData.summary);
   });
 
-  test('render descriptions with dates', () => {
-    for (let i = 0; i < mockEventData.length; i += 1) {
-      expect(EventWrapper.find('.event_description').at(i).text()).toContain(mockEventData[i].start.dateTime);
-    }
+  test('render description with dates', () => {
+      expect(EventWrapper.find('.event_description').text()).toContain(mockEventData.start.dateTime);
   });
 
-  test('render descriptions with times', () => {
-    for (let i = 0; i < mockEventData.length; i += 1) {
-      expect(EventWrapper.find('.event_description').at(i).text()).toContain(mockEventData[i].start.timeZone);
-    }
+  test('render descriptions with time', () => {
+      expect(EventWrapper.find('.event_description').text()).toContain(mockEventData.start.timeZone);
   });
 
-  test('render descriptions with summary', () => {
-    for (let i = 0; i < mockEventData.length; i += 1) {
-      expect(EventWrapper.find('.event_description').at(i).text()).toContain(mockEventData[i].summary);
-    }
+  test('render description with summary', () => {
+      expect(EventWrapper.find('.event_description').text()).toContain(mockEventData.summary);
   });
 
   test('render descriptions with summary', () => {
-    for (let i = 0; i < mockEventData.length; i += 1) {
-      expect(EventWrapper.find('.event_description').at(i).text()).toContain(mockEventData[i].location);
-    }
+      expect(EventWrapper.find('.event_description').text()).toContain(mockEventData.location);
   });
 
-  test('check if there is are buttons', () => {
-    expect(EventWrapper.find('button')).toHaveLength(mockEventData.length);
+  test('check if there is a button', () => {
+    expect(EventWrapper.find('button')).toHaveLength(1);
   });
 
   test('h2 element should not be present by default', () => {

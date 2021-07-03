@@ -15,35 +15,31 @@ class Event extends Component {
   }
 
   render() {
-    const { events } = this.props;
+    const { event } = this.props;
     const { expand } = this.state;
 
-    let renderedDiv;
-    if (!expand) {
-     renderedDiv = events.map(event => <div key={event.id} className="event_title">
-     <h1>{event.summary}</h1>
-     <div className="event_description">
-       {event.start.dateTime} ({event.start.timeZone}) <br />@{event.summary} | {event.location}
-     </div>
-     <button onClick={this.onClickHandler}>Show details</button>
-   </div>)
-    }
-
-    else if (expand) {
-      renderedDiv = events.map(event => <div key={event.id} className="event_title">
-     <h1>{event.summary}</h1>
-     <div className="event_description">
-       {event.start.dateTime} ({event.start.timeZone}) <br />@{event.summary} | {event.location}
-     </div>
-     <h2>About Event:</h2>
-     <button onClick={this.onClickHandler}>Hide details</button>
-   </div>)
-
-    }
     return (
       <>
-      {renderedDiv}  
-      </>
+       { !expand ?
+       <div> 
+        <h1 className="event_title">{event.summary}</h1>
+          <div className="event_description">
+            {event.start.dateTime} ({event.start.timeZone}) <br />@{event.summary} | {event.location}
+            </div>
+        <button onClick={this.onClickHandler}>Show details</button>
+      </div>
+        :
+      <div>
+      <h1 className="event_title">{event.summary}</h1>
+        <div className="event_description">
+       {event.start.dateTime} ({event.start.timeZone}) <br />@{event.summary} | {event.location}
+       </div>
+        <h2>About Event:</h2>
+        <button onClick={this.onClickHandler}>Hide details</button>
+      </div>
+      }
+    </>
+      
     )
   }
 }
