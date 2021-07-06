@@ -65,4 +65,10 @@ describe('<CitySearch /> component', () => {
     expect(CitySearchWrapper.state("query")).toBe(suggestions[0]);
   });
 
+  test("selecting CitySearch input reveals the suggestions list", () => {
+    CitySearchWrapper.find('.city').simulate('focus');
+    expect(CitySearchWrapper.state('showSuggestions')).toBe(true);
+    expect(CitySearchWrapper.find('.suggestions').prop('style')).not.toEqual({ display: 'none' });
+  });
+
 });
