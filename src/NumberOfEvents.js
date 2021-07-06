@@ -4,11 +4,11 @@ class NumberOfEvents extends Component {
 
  render() {
 
-  const { events } = this.props;
+ const { events } = this.props;
 
  return (
   <div>
-    <input type="text" value={events.length}/>
+    <input type="text" value={32}/>
   </div>
  )
 

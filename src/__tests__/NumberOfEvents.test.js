@@ -15,8 +15,8 @@ describe('<NumberOfEvents /> component', () => {
     expect(NumberOfEventsWrapper.find('input')).toHaveLength(1);
   });
 
-  test('check if the value of the input field is the length of the events', () => {
-    expect(NumberOfEventsWrapper.find('input').props().value).toBe(mockData.length);
+  test('check if the value of the input field is 32', () => {
+    expect(NumberOfEventsWrapper.find('input').props().value).toBe(32);
   });
 
 }); 
