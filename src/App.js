@@ -26,6 +26,10 @@ class App extends Component {
     });
   }
 
+  updateNumberOfEvents = (number) => {
+    this.setState({numberOfEvents: Number(number)});
+  }
+
   componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
@@ -41,7 +45,7 @@ class App extends Component {
     return (
       <div className="App">
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents />
+        <NumberOfEvents numberOfEvents={this.state.numberOfEvents} handleChange={this.updateNumberOfEvents} />
         <EventList events={this.state.events} />
       </div>
     );

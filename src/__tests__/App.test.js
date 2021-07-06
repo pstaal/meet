@@ -73,7 +73,7 @@ describe('<App /> integration', () => {
   test('changing number of events changes the numberofevents state in app"', async () => {
     const AppWrapper = mount(<App />);
     const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
-    const eventObject = { target: { value: '1' }};
+    const eventObject = { target: { value: 1 }};
     await NumberOfEventsWrapper.find('input').simulate('change', eventObject);
     expect(AppWrapper.state('numberOfEvents')).toEqual(1);
     AppWrapper.unmount();
