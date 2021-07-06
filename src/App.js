@@ -11,7 +11,8 @@ import './nprogress.css';
 class App extends Component {
   state = {
     events: [],
-    locations: []
+    locations: [],
+    numberOfEvents: 2
   }
 
   updateEvents = (location) => {
