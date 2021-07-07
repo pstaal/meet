@@ -7,6 +7,8 @@ const calendar = google.calendar("v3");
  */
 const SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
+// Redeploy
+
 /**
  * Credentials are those values required to get access to your calendar. If you see “process.env” this means
  * the value is in the “config.json” file. This is a best practice as it keeps your API secrets hidden. Please remember to add “config.json” to your “.gitignore” file.
@@ -148,6 +150,9 @@ module.exports.getCalendarEvents = async (event) => {
       console.error(err);
       return {
         statusCode: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify(err),
       };
     });

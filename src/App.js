@@ -21,7 +21,7 @@ class App extends Component {
       const locationEvents = (location === 'all') ?
         events :
         events.filter((event) => event.location === location);
-        locationEvents.length = this.state.numberOfEvents;
+        locationEvents.length = Number(this.state.numberOfEvents);
       this.setState({
         events: locationEvents
       });
@@ -32,10 +32,10 @@ class App extends Component {
         const locationEvents = (location === 'all') ?
           events :
           events.filter((event) => event.location === location);
-          locationEvents.length = eventCount;
+          locationEvents.length = Number(eventCount);
         this.setState({
           events: locationEvents,
-          numberOfEvents: eventCount
+          numberOfEvents: Number(eventCount)
         });
       });
 
@@ -46,7 +46,7 @@ class App extends Component {
   componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
-      events.length = this.state.numberOfEvents;
+      events.length = Number(this.state.numberOfEvents);
       this.setState({ events, locations: extractLocations(events) });
     });
   }
