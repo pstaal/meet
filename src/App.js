@@ -37,6 +37,7 @@ class App extends Component {
           events: newEventArray,
           numberOfEvents: Number(eventCount)
         });
+        console.log(this.state)
       });
 
     }
