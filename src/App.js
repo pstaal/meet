@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   updateEvents = (location, eventCount) => {
-    if (!eventCount && location) {
+    if (eventCount === undefined) {
     getEvents().then((events) => {
       const locationEvents = (location === 'all') ?
         events :
@@ -27,7 +27,7 @@ class App extends Component {
       });
     });
     }
-    else if (eventCount && !location) {
+    else if (location === undefined) {
       getEvents().then((events) => {
         const locationEvents = (location === 'all') ?
           events :
