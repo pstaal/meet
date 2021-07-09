@@ -36,6 +36,8 @@ class Event extends Component {
        </div>
        <div className="event__Details">
         <h2>About Event:</h2>
+        <p><a href={event.htmlLink}>See details on Google Calendar</a></p>
+        <p>{event.description}</p>
         <button className="details-btn" onClick={this.onClickHandler}>Hide details</button>
        </div>
       </div>
