@@ -26,7 +26,7 @@ class Event extends Component {
           <div className="event_description">
             {event.start.dateTime} ({event.start.timeZone}) <br />@{event.summary} | {event.location}
             </div>
-        <button onClick={this.onClickHandler}>Show details</button>
+        <button className="details-btn" onClick={this.onClickHandler}>Show details</button>
       </div>
         :
       <div>
@@ -34,8 +34,10 @@ class Event extends Component {
         <div className="event_description">
        {event.start.dateTime} ({event.start.timeZone}) <br />@{event.summary} | {event.location}
        </div>
+       <div className="event__Details">
         <h2>About Event:</h2>
-        <button onClick={this.onClickHandler}>Hide details</button>
+        <button className="details-btn" onClick={this.onClickHandler}>Hide details</button>
+       </div>
       </div>
       }
     </>
