@@ -37,11 +37,11 @@ defineFeature(feature, test => {
 
     when('the user selects the number of events to display', () => {
     const eventObject = { target: {value: 1}};
-    AppWrapper.find(NumberOfEvents).simulate('change', eventObject);
+    AppWrapper.find('.numOfEvents').simulate('change', eventObject);
     });
 
     then('the page will show the number of events that the user selected', () => {
-      expect(AppWrapper.find('.event')).toHaveLength(1);
+      expect(AppWrapper.state('events').length).toBe(AppWrapper.state('numberOfEvents'));
     });
 
   });

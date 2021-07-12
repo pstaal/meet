@@ -27,7 +27,7 @@ changeHandler = (e) => {
 
  return (
   <div>
-    <p>Number of Events: <input type="text" value={this.state.eventValue} onChange={(e)=> this.changeHandler(e)} /></p>
+    <p>Number of Events: <input type="text" className="numOfEvents" value={this.state.eventValue} onChange={(e)=> this.changeHandler(e)} /></p>
   </div>
  )
 
