@@ -35,14 +35,12 @@ class App extends Component {
         const locationEvents = (this.state.currentLocation === 'all') ?
           events :
           events.filter((event) => event.location === this.state.currentLocation);
-          console.log(locationEvents)
           let cutOff = Math.min(locationEvents.length, Number(eventCount));
           let newEventArray = locationEvents.slice(0, cutOff)
         this.setState({
           events: newEventArray,
           numberOfEvents: Number(eventCount)
         });
-        console.log(this.state)
       });
 
     }
