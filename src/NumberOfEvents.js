@@ -12,9 +12,10 @@ state = {
 changeHandler = (e) => {
   if (e.target.value === '') {
     let countValue = 0;
-    this.props.updateEvents(undefined, countValue)
+    this.props.updateEvents(undefined, countValue);
+    this.setState({eventValue: e.target.value})
   } else if (Number(e.target.value) > 32) {
-    this.setState({errorText: 'Please choose a number below 32'})
+    this.setState({eventValue: e.target.value, errorText: 'Please choose a number below 32'})
   }
   else {
     this.props.updateEvents(undefined, e.target.value);
