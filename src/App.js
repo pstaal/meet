@@ -6,6 +6,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
+import { ErrorAlert } from './Alert';
 import './nprogress.css';
 
 class App extends Component {
@@ -62,11 +63,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      {navigator.onLine ? 
+        <div className="App">
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
-      </div>
+        </div>
+        :
+        <div className="App">
+        <ErrorAlert text={'Please be aware that this list has been loaded from cache!'} />
+        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+        <NumberOfEvents updateEvents={this.updateEvents} />
+        <EventList events={this.state.events} /> 
+        </div>
+      }
+      
     );
   }
 }
