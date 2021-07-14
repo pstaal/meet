@@ -62,23 +62,26 @@ class App extends Component {
   }
 
   render() {
+    if (navigator.onLine) {
     return (
-      {navigator.onLine ? 
         <div className="App">
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
         </div>
-        :
+    )}
+
+    else if (!navigator.onLine) {
+        return (
         <div className="App">
         <ErrorAlert text={'Please be aware that this list has been loaded from cache!'} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <EventList events={this.state.events} /> 
         </div>
-      }
+        )}
       
-    );
+    
   }
 }
 
