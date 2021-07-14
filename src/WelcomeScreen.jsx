@@ -1,5 +1,10 @@
 import React from "react";
 import './WelcomeScreen.css';
+import WelcomeScreen from './WelcomeScreen';
+import { getEvents, extractLocations, checkToken, getAccessToken } from
+'./api';
+
+
 function WelcomeScreen(props) {
 return props.showWelcomeScreen ?
 (
