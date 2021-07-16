@@ -5,22 +5,7 @@ import { Pie, PieChart, Cell, ResponsiveContainer } from 'recharts';
 
 const EventGenre = ({ events }) => {
 
-  const [data, setData] = useState([]);
-
-const data = [
-  { name: 'Group A',
-    value: 400
-  },
-  { name: 'Group B',
-    value: 300
-  },
-  { name: 'Group C',
-    value: 300
-  },
-  { name: 'Group D',
-    value: 200
-  }
-];
+const [data, setData] = useState([]);
 
 const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
 
@@ -34,7 +19,7 @@ const getData = () => {
   });
 
 return data;
-}
+};
 
 useEffect(() => { setData(() => getData()); }, [events]);
 
@@ -43,7 +28,7 @@ return (
 <ResponsiveContainer height={400}>
   <PieChart width={400} height={400}>
     <Pie
-    data={getData()}
+    data={data}
     cx={200}
     cy={200}
     labelLine={false}
