@@ -1,3 +1,5 @@
+import { data } from 'cheerio/lib/api/attributes';
+import { getSnapshotData } from 'jest-snapshot/build/utils';
 import React, {useState, useEffect } from 'react';
 import { Pie, PieChart, Cell, ResponsiveContainer } from 'recharts';
 
@@ -18,11 +20,25 @@ const data = [
   }
 ];
 
+const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
+
+const getData = (events) => {
+  const data = genres.map((genre)=>{
+
+    const value = events.filter((event) => event.summary.split(' ').includes(genre)).length;
+
+
+    return { name: genre, value };
+  });
+
+return data;
+}
+
 return (
 <ResponsiveContainer height={400}>
   <PieChart width={400} height={400}>
     <Pie
-    data={data}
+    data={getData(events)}
     cx={200}
     cy={200}
     labelLine={false}
