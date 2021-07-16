@@ -1,5 +1,3 @@
-import { data } from 'cheerio/lib/api/attributes';
-import { getSnapshotData } from 'jest-snapshot/build/utils';
 import React, {useState, useEffect } from 'react';
 import { Pie, PieChart, Cell, ResponsiveContainer } from 'recharts';
 
