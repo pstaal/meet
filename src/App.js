@@ -10,7 +10,7 @@ import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import { ErrorAlert } from './Alert';
 import './nprogress.css';
 import {
-  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip
+  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 
 class App extends Component {
@@ -94,10 +94,8 @@ class App extends Component {
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />      
          <h4>Events in each city</h4>
-
+         <ResponsiveContainer height={400} >
          <ScatterChart
-          width={400}
-          height={400}
           margin={{
             top: 20, right: 20, bottom: 20, left: 20,
           }}
@@ -108,6 +106,7 @@ class App extends Component {
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
           <Scatter data={this.getData()} fill="#8884d8" />
         </ScatterChart>
+        </ResponsiveContainer>
         <EventList events={this.state.events} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
           getAccessToken={() => { getAccessToken() }} />
@@ -123,10 +122,8 @@ class App extends Component {
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />     
          <h4>Events in each city</h4>
-
+         <ResponsiveContainer height={400} >
          <ScatterChart
-          width={400}
-          height={400}
           margin={{
             top: 20, right: 20, bottom: 20, left: 20,
           }}
@@ -137,6 +134,7 @@ class App extends Component {
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
           <Scatter data={this.getData()} fill="#8884d8" />
         </ScatterChart>
+        </ResponsiveContainer>
         <EventList events={this.state.events} /> 
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
           getAccessToken={() => { getAccessToken() }} />
