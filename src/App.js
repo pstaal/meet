@@ -73,31 +73,28 @@ class App extends Component {
 
   render() {
     if (this.state.showWelcomeScreen === undefined) return <div className="App" /> 
-    if (navigator.onLine) {
+    let text;
+    if (!navigator.onLine) {
+      text= 'Please be aware that the list is taken from cache!';
+    } else {
+      text ='';
+    }
+
     return (
         <div className="App">
+        <ErrorAlert text={text} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
           getAccessToken={() => { getAccessToken() }} />
         </div>
-    )}
+    )
 
-    else if (!navigator.onLine) {
-        return (
-        <div className="App">
-        <ErrorAlert text={'Please be aware that this list has been loaded from cache!'} />
-        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents updateEvents={this.updateEvents} />
-        <EventList events={this.state.events} /> 
-        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
-          getAccessToken={() => { getAccessToken() }} />
-        </div>
-        )}
+  }
       
     
-  }
+  
 }
 
 export default App;
