@@ -87,9 +87,17 @@ class App extends Component {
 
   render() {
     if (this.state.showWelcomeScreen === undefined) return <div className="App" /> 
+    let text;
+    if (!navigator.onLine) {
+      text = 'Please note that the list is rendered from cache';
+    } else {
+      text='';
+    }
+    
     return (
         <div className="App">
         <h1>Meet App</h1>
+        <ErrorAlert text={text} />
         <h4>Choose your nearest city</h4>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />      
