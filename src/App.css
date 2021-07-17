@@ -198,6 +198,11 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
+.data-vis-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
     flex-direction: row;
@@ -212,6 +217,7 @@ input[type="number"] {
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
+    display: flex;
     flex-direction: row;
   }
 
