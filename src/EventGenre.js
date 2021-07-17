@@ -25,7 +25,7 @@ useEffect(() => { setData(() => getData()); }, [events]);
 const colors = ['#8884d7', '#d1ed57', '#a4de6b', '#8dd1e1', '#82a6ec', '#81ca9c'];
 
 return (
-<ResponsiveContainer height={400}>
+<ResponsiveContainer height={400} className="recharts-responsive-container">
   <PieChart width={400} height={400}>
     <Pie
     data={data}
@@ -43,7 +43,7 @@ return (
       ))
     }
     </Pie>
-    <Legend verticalAlign="bottom" height={36}/>
+    <Legend align="left" verticalAlign="bottom" height={36}/>
   </PieChart>
 </ResponsiveContainer>
 )
