@@ -43,6 +43,7 @@ return (
       ))
     }
     </Pie>
+    <Legend verticalAlign="bottom" height={36}/>
   </PieChart>
 </ResponsiveContainer>
 )
