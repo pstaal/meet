@@ -22,6 +22,7 @@ return data;
 
 useEffect(() => { setData(() => getData()); }, [events]);
 
+const colors = ['#8884d7', '#d1ed57', '#a4de6b', '#8dd1e1', '#82a6ec', '#81ca9c'];
 
 return (
 <ResponsiveContainer height={400}>
@@ -35,7 +36,13 @@ return (
     fill="#8884d8"
     dataKey="value"
     label={({name, percent}) => `${name} ${(percent * 100).toFixed(0)}%`}
-    />
+    >
+    {
+      data.map((entry, index) => (
+        <Cell key={`cell-${index}`} fill={colors[index]}/>
+      ))
+    }
+    </Pie>
   </PieChart>
 </ResponsiveContainer>
 )
