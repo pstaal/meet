@@ -66,6 +66,7 @@ class App extends Component {
     this.setState({ showWelcomeScreen: !(code || isTokenValid) });
     if ((code || isTokenValid) && this.mounted) {
     getEvents().then((events) => {
+      console.log(events)
     if (this.mounted) {
     this.setState({ events, locations: extractLocations(events) });
           }
@@ -80,10 +81,11 @@ class App extends Component {
   render() {
     if (this.state.showWelcomeScreen === undefined) return <div className="App" /> 
   
-
+   console.log(`events from state ${this.state.events}`);
+   console.log(`locations from state ${this.state.locations}`);
     return (
         <div className="App">
-        <div>Check12</div>
+        <div>Check1200</div>
         <ErrorAlert text={this.state.text === 'Offline' ? 'Please be aware that the list is taken from cache' : ''} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
