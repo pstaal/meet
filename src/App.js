@@ -52,6 +52,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
+    console.log('1.--------')
     this.mounted = true;
     const accessToken = localStorage.getItem('access_token');
     const isTokenValid = (await checkToken(accessToken)).error ? false :
@@ -60,6 +61,7 @@ class App extends Component {
     const code = searchParams.get("code");
     this.setState({ showWelcomeScreen: !(code || isTokenValid) });
     if (!navigator.onLine) {
+      console.log('2.--------')
       this.setState({text:'Please be aware that the list is taken from cache!'})
     }
     if ((code || isTokenValid) && this.mounted) {
