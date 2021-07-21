@@ -58,10 +58,13 @@ class App extends Component {
       getEvents().then((events) => {
         console.log(events, 'called from inside offline')
       if (this.mounted) {
+      
       this.setState({ events, locations: extractLocations(events) });
-            }
-          });
-       } 
+          
+      }
+      
+    });
+        
 
     }
     const accessToken = localStorage.getItem('access_token');
