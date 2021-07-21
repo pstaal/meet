@@ -59,19 +59,17 @@ class App extends Component {
     true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("code");
-    // if (!navigator.onLine) {
-    //   console.log('2.--------')
-    //   this.setState({text:'Please be aware that the list is taken from cache!'})
-    // } 
-    // this.setState({ showWelcomeScreen: !(code || isTokenValid) });
-    // if ((code || isTokenValid) && this.mounted) {
+    console.log(code, 'inside');
+    console.log(isTokenValid, 'inside');
+    this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+    if ((code || isTokenValid) && this.mounted) {
     getEvents().then((events) => {
       console.log(events, 'called from inside componentDidMount')
     if (this.mounted) {
     this.setState({ events, locations: extractLocations(events) });
           }
         });
-      // } 
+     } 
     }
 
   componentWillUnmount(){
