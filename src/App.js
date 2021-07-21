@@ -54,6 +54,16 @@ class App extends Component {
   async componentDidMount() {
     console.log('1.--------')
     this.mounted = true;
+    if (!navigator.onLine) {
+      getEvents().then((events) => {
+        console.log(events, 'called from inside offline')
+      if (this.mounted) {
+      this.setState({ events, locations: extractLocations(events) });
+            }
+          });
+       } 
+
+    }
     const accessToken = localStorage.getItem('access_token');
     const isTokenValid = (await checkToken(accessToken)).error ? false :
     true;
