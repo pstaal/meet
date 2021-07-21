@@ -64,25 +64,13 @@ class App extends Component {
       this.setState({text:'Please be aware that the list is taken from cache!'})
     } 
     this.setState({ showWelcomeScreen: !(code || isTokenValid) });
-    // if (!navigator.onLine) {
-    //   console.log('2.--------')
-    //   this.setState({text:'Please be aware that the list is taken from cache!'})
-    // } else {
-    //   this.setState({text:''});
-    // }
     if ((code || isTokenValid) && this.mounted) {
     getEvents().then((events) => {
     if (this.mounted) {
     this.setState({ events, locations: extractLocations(events) });
           }
         });
-      } else {
-        getEvents().then((events) => {
-          if (this.mounted) {
-          this.setState({ events, locations: extractLocations(events) });
-                }
-              });
-      }
+      } 
     }
 
   componentWillUnmount(){
@@ -95,13 +83,13 @@ class App extends Component {
 
     return (
         <div className="App">
-        <h1>hello</h1>
+        <div>Check</div>
         <ErrorAlert text={this.state.text} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
-          getAccessToken={() => { getAccessToken() }} />
+          getAccessToken={() => { getAccessToken() }} /> 
         </div>
     )
 
