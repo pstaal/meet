@@ -17,7 +17,7 @@ class App extends Component {
     numberOfEvents: 32,
     currentLocation: 'all',
     showWelcomeScreen: undefined,
-    text: 'This is the latest version?'
+    text: ''
   }
 
   updateEvents = (location, eventCount) => {
@@ -81,6 +81,7 @@ class App extends Component {
 
     return (
         <div className="App">
+        <h1>teststests</h1>
         <ErrorAlert text={this.state.text} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
