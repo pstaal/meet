@@ -17,7 +17,7 @@ class App extends Component {
     numberOfEvents: 32,
     currentLocation: 'all',
     showWelcomeScreen: undefined,
-    text: ''
+    text: 'This is the latest version?'
   }
 
   updateEvents = (location, eventCount) => {
