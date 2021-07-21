@@ -17,7 +17,7 @@ class App extends Component {
     numberOfEvents: 32,
     currentLocation: 'all',
     showWelcomeScreen: undefined,
-    text: ''
+    text: navigator.onLine ? 'Online' : 'Offline'
   }
 
   updateEvents = (location, eventCount) => {
@@ -59,10 +59,10 @@ class App extends Component {
     true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("code");
-    if (!navigator.onLine) {
-      console.log('2.--------')
-      this.setState({text:'Please be aware that the list is taken from cache!'})
-    } 
+    // if (!navigator.onLine) {
+    //   console.log('2.--------')
+    //   this.setState({text:'Please be aware that the list is taken from cache!'})
+    // } 
     this.setState({ showWelcomeScreen: !(code || isTokenValid) });
     if ((code || isTokenValid) && this.mounted) {
     getEvents().then((events) => {
@@ -83,8 +83,8 @@ class App extends Component {
 
     return (
         <div className="App">
-        <div>Check</div>
-        <ErrorAlert text={this.state.text} />
+        <div>Check12</div>
+        <ErrorAlert text={this.state.text === 'Offline' ? 'Please be aware that the list is taken from cache' : ''} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
