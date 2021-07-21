@@ -63,15 +63,15 @@ class App extends Component {
     //   console.log('2.--------')
     //   this.setState({text:'Please be aware that the list is taken from cache!'})
     // } 
-    this.setState({ showWelcomeScreen: !(code || isTokenValid) });
-    if ((code || isTokenValid) && this.mounted) {
+    // this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+    // if ((code || isTokenValid) && this.mounted) {
     getEvents().then((events) => {
-      console.log(events)
+      console.log(events, 'called from inside componentDidMount')
     if (this.mounted) {
     this.setState({ events, locations: extractLocations(events) });
           }
         });
-      } 
+      // } 
     }
 
   componentWillUnmount(){
