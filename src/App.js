@@ -63,6 +63,8 @@ class App extends Component {
     if (!navigator.onLine) {
       console.log('2.--------')
       this.setState({text:'Please be aware that the list is taken from cache!'})
+    } else {
+      this.setState({text:''});
     }
     if ((code || isTokenValid) && this.mounted) {
     getEvents().then((events) => {
@@ -83,7 +85,7 @@ class App extends Component {
 
     return (
         <div className="App">
-        <h1>teststests</h1>
+        <h1>hello</h1>
         <ErrorAlert text={this.state.text} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
