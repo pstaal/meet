@@ -64,7 +64,7 @@ class App extends Component {
       }
       
     });
-        
+     return;   
 
     }
     const accessToken = localStorage.getItem('access_token');
