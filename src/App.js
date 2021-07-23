@@ -91,7 +91,6 @@ class App extends Component {
    
     return (
         <div className="App">
-        <div>Check2255</div>
         <ErrorAlert text={this.state.text === 'Offline' ? 'Please be aware that the list is taken from cache' : ''} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
