@@ -198,7 +198,7 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
-.data-vis.wrapper {
+.data-vis-wrapper {
   display: flex;
   flex-direction: row;
   width: 100%;
