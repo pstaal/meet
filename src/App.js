@@ -20,7 +20,8 @@ class App extends Component {
     locations: [],
     numberOfEvents: 32,
     currentLocation: 'all',
-    showWelcomeScreen: undefined
+    showWelcomeScreen: undefined,
+    text: navigator.onLine ? 'Online' : 'Offline'
   }
 
   updateEvents = (location, eventCount) => {
@@ -66,6 +67,20 @@ class App extends Component {
 
   async componentDidMount() {
     this.mounted = true;
+    if (!navigator.onLine) {
+      getEvents().then((events) => {
+        console.log(events, 'called from inside offline')
+      if (this.mounted) {
+      
+      this.setState({ events, locations: extractLocations(events), showWelcomeScreen: false });
+          
+      }
+      
+    });
+     return;   
+
+    }
+
     const accessToken = localStorage.getItem('access_token');
     const isTokenValid = (await checkToken(accessToken)).error ? false :
     true;
@@ -97,7 +112,7 @@ class App extends Component {
     return (
         <div className="App">
         <h1>Meet App</h1>
-        <ErrorAlert text={text} />
+        <ErrorAlert text={this.state.text === 'Offline' ? 'Please be aware that the list is taken from cache' : ''} />
         <h4>Choose your nearest city</h4>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />      
