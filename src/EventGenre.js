@@ -26,7 +26,7 @@ const colors = ['#8884d7', '#d1ed57', '#a4de6b', '#8dd1e1', '#82a6ec', '#81ca9c'
 
 return (
 <ResponsiveContainer height={400} style={{flex: '20%'}} className="recharts-responsive-container">
-<h4>Events in each city</h4>
+
   <PieChart height={400}>
     <Pie
     data={data}
