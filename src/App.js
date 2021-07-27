@@ -116,10 +116,9 @@ class App extends Component {
         <h4>Choose your nearest city</h4>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />      
-         <h4>Events in each city</h4>
          <div className="data-vis.wrapper">
          <EventGenre events={this.state.events} />
-         <ResponsiveContainer height={400} className="recharts-responsive-container">
+         <ResponsiveContainer height={400}  style={{flex: '80%'}} className="recharts-responsive-container">
          <ScatterChart
           margin={{
             top: 20, right: 20, bottom: 20, left: 20,
