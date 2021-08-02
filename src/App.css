@@ -201,9 +201,5 @@ input[type="number"] {
 .data-vis-wrapper {
   display: flex;
   flex-direction: row;
-  width: 100vw;
-}
-
-.recharts-responsive-container {
-  flex-basis: 50%;
+  width: 100%;
 }

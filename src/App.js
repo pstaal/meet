@@ -118,7 +118,7 @@ class App extends Component {
         <NumberOfEvents updateEvents={this.updateEvents} />      
          <div className="data-vis-wrapper">
          <EventGenre events={this.state.events} />
-         <ResponsiveContainer height={400} className="recharts-responsive-container">
+         <ResponsiveContainer height={400}  width='80%' className="recharts-responsive-container">
          <ScatterChart
           margin={{
             top: 20, right: 20, bottom: 20, left: 20,
